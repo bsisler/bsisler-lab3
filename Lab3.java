@@ -1,6 +1,8 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+import java.beans.Transient;
+
 public class Lab3 {
 
 //Starting Numbers Test Cases
@@ -158,6 +160,16 @@ public class Lab3 {
 @Test
     public void test29() {
         assertEquals(true, AmazonBackend.checkCode("123.BlankBlah 12345"));
+    }
+
+@Test
+    public void test30() {
+        assertEquals(false, AmazonBackend.checkCode("123.Blank\nBlah 12345"));
+    }
+
+@Test
+    public void test31() {
+        assertEquals(false, AmazonBackend.checkCode("123.Blank \n Blah 12345"));
     }
 
 }
